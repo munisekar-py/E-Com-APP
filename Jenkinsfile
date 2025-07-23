@@ -51,14 +51,23 @@ pipeline {
     }
 */
 
-   stage('Check Tools') {
-     steps {
-      sh 'which kubectl || echo "kubectl not found"'
-      sh 'kubectl version --client || echo "kubectl broken"'
-      sh 'env'
+     stage('Check Tools') {
+       steps {
+        sh 'which kubectl || echo "kubectl not found"'
+        sh 'kubectl version --client || echo "kubectl broken"'
+        sh 'env'
+        }
       }
-   }
-    stage('Configure kubeconfig') {
+
+
+    stage('Deploy to EKS') {
+        steps {
+          sh "kubectl apply -f K8s/"
+         }
+       
+
+     }
+     stage('Configure kubeconfig') {
       steps {
         sh '''
         aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
@@ -66,36 +75,6 @@ pipeline {
       }
     }
 
-    stage('Deploy Backend Services to EKS') {
-      steps {
-        sh '''
-        kubectl apply -f k8s/user-deployment.yaml
-        kubectl apply -f k8s/user-service.yaml
-        kubectl apply -f k8s/product-service.yaml
-        kubectl apply -f k8s/cart-service.yaml
-        kubectl apply -f k8s/order-service.yaml
-        '''
-      }
-    }
-
-    stage('Deploy Ingress for Backend') {
-      steps {
-        sh '''
-        kubectl apply -f k8s/backend-ingress.yaml
-        '''
-      }
-    }
-
-    stage('Deploy Frontend') {
-      steps {
-        sh '''
-        kubectl apply -f k8s/frontend-deployment.yaml
-        kubectl apply -f k8s/frontend-service.yaml
-        kubectl apply -f k8s/frontend-ingress.yaml
-        '''
-      }
-    }
-  }
 
   post {
     failure {
