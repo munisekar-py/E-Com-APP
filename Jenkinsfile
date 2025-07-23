@@ -6,7 +6,7 @@ pipeline {
     AWS_ACCESS_KEY_ID = credentials('aws-access-key')
     AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
     AWS_REGION = 'us-west-2'
-    CLUSTER_NAME = 'munish-ecommerce-cluster'
+    CLUSTER_NAME = 'munish-ecommerce-cluster-3'
   }
 
  stages {
