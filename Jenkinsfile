@@ -73,7 +73,7 @@ pipeline {
           sh "kubectl apply -f K8s/"
          }
      }
-
+}
 
   post {
     failure {
