@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: noizy23yo/e-commerce:frontend-new-prod  
+          image: munisekar/frontend-service:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -28,5 +28,6 @@ spec:
   selector:
     app: frontend
   ports:
-    - port: 80
+    - protocok: TCP
+      port: 80
       targetPort: 80
