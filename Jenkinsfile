@@ -24,8 +24,8 @@ pipeline {
             steps {
                 script {
                     sh """
-          echo \$DOCKERHUB_CREDENTIALS_PSW | docker login -u \$DOCKERHUB_CREDENTIALS_USR --password-stdin
-        """
+                      echo \$DOCKERHUB_CREDENTIALS_PSW | docker login -u \$DOCKERHUB_CREDENTIALS_USR --password-stdin
+                        """
                     def services = ['user-service', 'product-service', 'cart-service', 'order-service', 'frontend']
                     for (svc in services) {
                         sh "docker push \$DOCKERHUB_CREDENTIALS_USR/${svc}:latest"
@@ -57,8 +57,8 @@ pipeline {
         stage('Configure kubeconfig') {
             steps {
                 sh '''
-        aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
-        '''
+                aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME
+                    '''
             }
         }
         stage('Deploy to EKS') {
