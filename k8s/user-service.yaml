@@ -4,7 +4,7 @@ metadata:
   name: user-service-secret
 type: Opaque
 data:
-  MONGODB_URI: bW9uZ29kYitzcnY6Ly9rdXNoYWxyYW8xMDM6ZVpnTEFSUjFwMnhTR2ZHVUBjbHVzdGVyMC4xYTNpcS5tb25nb2RiLm5ldC9lY29tbWVyY2VfdXNlcnM=
+  MONGODB_URI: "mongodb+srv://munisheak:r2V7267uMR1qUvRt@munish-travel-mem.sz1p7kc.mongodb.net/ecommerce_users"
   JWT_SECRET: eW91ci1qd3Qtc2VjcmV0LWtleQ==
 ---
 apiVersion: apps/v1
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: noizy23yo/e-commerce:user-service
+          image: munisekar/user-service:latest
           ports:
             - containerPort: 3001
           env:
