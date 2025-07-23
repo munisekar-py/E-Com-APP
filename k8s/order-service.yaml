@@ -28,7 +28,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: order-service-config
-                key: MONGODB_URI
           env:
             - name: CART_SERVICE_URL
               value: "http://cart-service:3003"
