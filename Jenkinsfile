@@ -59,13 +59,6 @@ pipeline {
         }
       }
 
-
-    stage('Deploy to EKS') {
-        steps {
-          sh "kubectl apply -f K8s/"
-         }
-       
-
      }
      stage('Configure kubeconfig') {
       steps {
@@ -74,6 +67,12 @@ pipeline {
         '''
       }
     }
+
+    stage('Deploy to EKS') {
+        steps {
+          sh "kubectl apply -f K8s/"
+         }
+     }
 
 
   post {
