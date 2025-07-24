@@ -89,6 +89,7 @@ Frontend (React) → API Gateway → Microservices
 
 <img width="731" height="444" alt="Screenshot from 2025-07-23 21-55-45" src="https://github.com/user-attachments/assets/f5427e52-e14d-4d96-8610-35abceac51f0" />
 
+#
 **Create Jenkins pipeline and deploy the application**
 
 <img width="1150" height="500" alt="image" src="https://github.com/user-attachments/assets/82bef5c5-94e4-4af4-8003-3b4ac47da00d" />
@@ -96,20 +97,22 @@ Frontend (React) → API Gateway → Microservices
 <img width="670" height="500" alt="Screenshot from 2025-07-23 12-14-02" src="https://github.com/user-attachments/assets/4a817ade-b45a-423f-939f-0de777a99939" />
 
 #
-- **Post Pipline Success, Validating Services, Pods, Kube Nodes**
+- **Post Pipeline Success, Validating Services, Pods, Kube Nodes**
+
 - `kubects get nodes`
-- <img width="959" height="137" alt="Screenshot from 2025-07-23 12-26-37" src="https://github.com/user-attachments/assets/5054ea2a-1aad-4c19-870a-9e2365516bc7" />
+ <img width="959" height="137" alt="Screenshot from 2025-07-23 12-26-37" src="https://github.com/user-attachments/assets/5054ea2a-1aad-4c19-870a-9e2365516bc7" />
 
 - `kubects get pods`
-- <img width="744" height="185" alt="Screenshot from 2025-07-23 12-24-34" src="https://github.com/user-attachments/assets/12867788-b5c6-4bdc-adc4-3cf99d28b172" />
+  
+ <img width="744" height="185" alt="Screenshot from 2025-07-23 12-24-34" src="https://github.com/user-attachments/assets/12867788-b5c6-4bdc-adc4-3cf99d28b172" />
 
 - `kubects get svc`
   - Frontend end type configured as Loadbalancer
   
-- <img width="1470" height="240" alt="Screenshot from 2025-07-23 12-24-15" src="https://github.com/user-attachments/assets/104453e8-3e5e-49cd-8bb7-c60fc3542f6f" />
+ <img width="1470" height="240" alt="Screenshot from 2025-07-23 12-24-15" src="https://github.com/user-attachments/assets/104453e8-3e5e-49cd-8bb7-c60fc3542f6f" />
 
 **Validating the application on Kubernetes cluster**
-
+#
   - created custome domain nane "`http://ecommerce.munisekar.com/`"
   - Application routed traffic to backend and DB, as expected.
   - Received Successfull `HTTP/200 Ok` status.
@@ -119,62 +122,27 @@ Frontend (React) → API Gateway → Microservices
     <img width="1540" height="1042" alt="Screenshot from 2025-07-23 12-10-25" src="https://github.com/user-attachments/assets/a9756a3c-fc6c-4795-92f7-ac25304e39bf" />
     <img width="1540" height="1042" alt="Screenshot from 2025-07-23 12-10-48" src="https://github.com/user-attachments/assets/6414cb32-fdf2-402b-ae6b-b5f23d4c9f93" />
     <img width="1622" height="678" alt="Screenshot from 2025-07-23 12-09-54" src="https://github.com/user-attachments/assets/2ab3eac6-63a6-4e11-b081-954a42aa3d10" />
-
+#
 - Register
     <img width="1406" height="861" alt="Screenshot from 2025-07-24 16-00-04" src="https://github.com/user-attachments/assets/8a524fe8-65bf-44a8-9451-b42dba736b09" />
+#
 
+### Post Deployment, cleanup activity performed.
+#
+
+- `kubectl delete all --all`
+ 
+<img width="532" height="402" alt="Screenshot from 2025-07-23 12-28-03" src="https://github.com/user-attachments/assets/3883cfe2-1c63-44e0-a198-49c13b29a4e3" />
+
+- delete EKS cluster
+  `ekctl delete cluster --name munish-ecommerce-cluster-3 --region us-west-2`
+  #
+  
+ <img width="1218" height="740" alt="Screenshot from 2025-07-23 21-55-45" src="https://github.com/user-attachments/assets/9b944858-05cd-447d-8ac0-332e9c098e9b" />
 
 
 
     
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The application will be available at:
-- Frontend: http://localhost:3000
-- User Service: http://localhost:3001
-- Product Service: http://localhost:3002
-- Cart Service: http://localhost:3003
-- Order Service: http://localhost:3004
-
 ## 🎯 Features
 
 ### User Features
