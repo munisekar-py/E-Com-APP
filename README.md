@@ -108,6 +108,27 @@ Frontend (React) → API Gateway → Microservices
   
 - <img width="1470" height="240" alt="Screenshot from 2025-07-23 12-24-15" src="https://github.com/user-attachments/assets/104453e8-3e5e-49cd-8bb7-c60fc3542f6f" />
 
+**Validating the application on Kubernetes cluster**
+
+  - created custome domain nane "`http://ecommerce.munisekar.com/`"
+  - Application routed traffic to backend and DB, as expected.
+  - Received Successfull `HTTP/200 Ok` status.
+  - Pages are successfully landed to `carts,orders,users` along with `registration`
+
+    <img width="1518" height="911" alt="Screenshot from 2025-07-23 12-11-07" src="https://github.com/user-attachments/assets/de0e7525-78c0-4aac-a85c-b2781d008b44" />
+    <img width="1540" height="1042" alt="Screenshot from 2025-07-23 12-10-25" src="https://github.com/user-attachments/assets/a9756a3c-fc6c-4795-92f7-ac25304e39bf" />
+    <img width="1540" height="1042" alt="Screenshot from 2025-07-23 12-10-48" src="https://github.com/user-attachments/assets/6414cb32-fdf2-402b-ae6b-b5f23d4c9f93" />
+    <img width="1622" height="678" alt="Screenshot from 2025-07-23 12-09-54" src="https://github.com/user-attachments/assets/2ab3eac6-63a6-4e11-b081-954a42aa3d10" />
+
+- Register
+    <img width="1406" height="861" alt="Screenshot from 2025-07-24 16-00-04" src="https://github.com/user-attachments/assets/8a524fe8-65bf-44a8-9451-b42dba736b09" />
+
+
+
+
+    
+
+    
 
 
 
